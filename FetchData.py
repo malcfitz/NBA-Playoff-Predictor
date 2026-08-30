@@ -66,7 +66,8 @@ def get_current_team_stats(
     adv = leaguedashteamstats.LeagueDashTeamStats(
         season=season,
         season_type_all_star='Regular Season',
-        measure_type_detailed_defense='Advanced'
+        measure_type_detailed_defense='Advanced',
+        per_mode_detailed='PerGame'
     ).get_data_frames()[0]
 
     time.sleep(1)
@@ -74,7 +75,8 @@ def get_current_team_stats(
     opp = leaguedashteamstats.LeagueDashTeamStats(
         season=season,
         season_type_all_star='Regular Season',
-        measure_type_detailed_defense='Opponent'
+        measure_type_detailed_defense='Opponent',
+        per_mode_detailed='PerGame'
     ).get_data_frames()[0]
 
     time.sleep(1)
@@ -121,7 +123,8 @@ def fetch_training_data() -> pd.DataFrame:
         adv = leaguedashteamstats.LeagueDashTeamStats(
             season=season,
             season_type_all_star='Playoffs',
-            measure_type_detailed_defense='Advanced'
+            measure_type_detailed_defense='Advanced',
+            per_mode_detailed='PerGame'
         ).get_data_frames()[0]
 
         time.sleep(1)
@@ -129,7 +132,8 @@ def fetch_training_data() -> pd.DataFrame:
         opp = leaguedashteamstats.LeagueDashTeamStats(
             season=season,
             season_type_all_star='Playoffs',
-            measure_type_detailed_defense='Opponent'
+            measure_type_detailed_defense='Opponent',
+            per_mode_detailed='PerGame'
         ).get_data_frames()[0]
 
         time.sleep(1)
